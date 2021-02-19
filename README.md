@@ -37,9 +37,9 @@ We would like you to enhance the existing project and see you complete the follo
 Thank you very much for your time to take this test. Please upload this complete solution in Github and send us the link to `bfs-sor-interview@paypal.com`.
 
 
-##Running steps
+## Running steps
 
-###CREATE_REQUEST
+### Create Request
 ```
 curl --location --request POST 'http://localhost:8080/v1/bfs/employee' \
    --header 'Content-Type: application/json' \
@@ -59,7 +59,7 @@ curl --location --request POST 'http://localhost:8080/v1/bfs/employee' \
 ```
 
 
-### CreateResponse 
+### Create Response 
 ```
 status_code : 201
 ```
@@ -90,7 +90,7 @@ RESPONSE
 curl --location --request GET 'http://localhost:8080/v1/bfs/employees/2'
 
 ```
-#### ValidResponse
+#### Valid Response
 ```
 {
     "id": 1,
