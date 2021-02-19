@@ -35,3 +35,113 @@ We would like you to enhance the existing project and see you complete the follo
 
 ## Assignment submission
 Thank you very much for your time to take this test. Please upload this complete solution in Github and send us the link to `bfs-sor-interview@paypal.com`.
+
+
+##Running steps
+
+###CREATE_REQUEST
+```
+curl --location --request POST 'http://localhost:8080/v1/bfs/employee' \
+   --header 'Content-Type: application/json' \
+   --data-raw '{
+       "first_name": "sonveer",
+       "last_name": "singh",
+       "dateOfBirth": "1995-01-01",
+       "address": {
+           "line1": "K11261-B",
+           "line2": "Reblic of Whitefiled",
+           "city": "Bangalore",
+           "state": "KA",
+           "country": "INDIA",
+           "zipcode": "12345"
+       }
+   }'
+```
+
+
+### CreateResponse 
+```
+status_code : 201
+```
+
+RESPONSE 
+```
+{
+    "id": 2,
+    "first_name": "sonveer",
+    "last_name": "singh",
+    "address": {
+        "line1": "K11261-B",
+        "line2": "Reblic of Whitefiled",
+        "city": "Bangalore",
+        "state": "KA",
+        "country": "INDIA",
+        "zipcode": "12345"
+    },
+    "dateOfBirth": "1995-01-01"
+}
+```
+
+
+### GET-REQUEST
+
+#### API
+```
+curl --location --request GET 'http://localhost:8080/v1/bfs/employees/2'
+
+```
+#### ValidResponse
+```
+{
+    "id": 1,
+    "first_name": "sonveer",
+    "last_name": "singh",
+    "address": {
+        "line1": "K11261-B",
+        "line2": "Reblic of Whitefiled",
+        "city": "Bangalore",
+        "state": "KA",
+        "country": "INDIA",
+        "zipcode": "12345"
+    },
+    "dateOfBirth": "1995-01-01"
+}
+```
+
+
+#### Invalid Response
+```
+status_code : 404:NOT_FOUND
+```
+
+```
+{
+    "httpStatus": "NOT_FOUND",
+    "message": "Record does not exist "
+}
+```
+
+### DELETE
+REQUEST
+```
+curl --location --request DELETE 'http://localhost:8080/v1/bfs/employees/3'
+
+```
+RESPONSE
+```
+status_code : 200:OK
+
+{
+    "httpStatus": "OK",
+    "message": "Record has been deleted"
+}
+
+```
+
+```
+status_code : 404:NOT_FOUND
+{
+    "httpStatus": "NOT_FOUND",
+    "message": "Record does not exist "
+}
+```

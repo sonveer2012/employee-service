@@ -18,10 +18,68 @@
       "type": "string",
       "minLength": 1,
       "maxLength": 255
+    },
+    "address": {
+      "$ref": "#/definitions/address"
+    },
+    "dateOfBirth": {
+      "description": "date of birth",
+      "type": "string",
+      "format": "date",
+      "pattern": "yyyy-MM-dd"
     }
   },
   "required": [
     "first_name",
     "last_name"
-  ]
+  ],
+  "definitions": {
+    "address": {
+      "title": "Address resource",
+      "description": "Address resource object",
+      "type": "object",
+      "properties": {
+        "line1": {
+          "description": "line1",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "line2": {
+          "description": "fline2",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "city": {
+          "description": "city",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "state": {
+          "description": "state",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "country": {
+          "description": "country",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "zipcode": {
+          "description": "zipcode",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 255
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name"
+      ]
+    }
+  }
 }
